@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="script.js">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: sans-serif;
+        min-height: 100vh;
+    }
+   .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    position: sticky;
+    background: rgb(229, 227, 236);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+   }
+   .navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 1600;
+   }
+   .navbar-logo{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+   }
+   .navbar-container .navbar-menu{
+    display: flex;
+    text-align: center;
+    gap: 1.5rem;
+    list-style: none;
+   }
+   .navbar-container .navbar-menu li a{
+    text-decoration: none;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+   }
+    .navbar-container .navbar-menu li a:hover {
+    color: #162530;
+    background: rgba(224, 229, 233, 0.8);
+    border: 2px solid #fff;
+   }
+   .navbar-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+   
+   }
+   .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #000;
+    transition: all 0.3s ease-in-out;
+   }
+   @media(max-width:  480px) {
+        .navbar-container {
+            padding: 0 1rem;
+        }
+        .navbar-logo{
+            font-size: 1.6rem;
+        }
+        .navbar-container .navbar-menu li a{
+
+        }
+   }
+   @media(max-width: 768px) {
+    .navbar{
+        backdrop-filter: none;
+    }
+    .navbar-container .navbar-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(1200px);
+    }
+    .navbar-container .navbar-menu.active {
+        display: flex;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: rgb(215, 208, 240);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(1200px);
+        
+    }
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .navbar-toggle.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+   
+
+}
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body{
+    font-family: sans-serif;
+    text-align: center;
+    color: #000;
+    padding: 1rem;
+   }
+   .header{
+    padding: 1rem 2rem 4rem;
+   }
+   .container{
+    max-width: 1200px;
+    margin: 0 auto;
+   }
+   .row{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+   }
+   .column{
+    background: rgb(78, 51, 250);
+    padding: 5rem 0;
+    flex: 1;
+    border-radius: 20px;
+   }
+   h3, p{
+    color: #fff;
+    margin-bottom: 30px;
+   }
+   img{
+    border-radius: 50%;
+   }
+   @media only screen and (max-width: 768px) {
+        .row{
+            flex-wrap: wrap;
+        }
+        .column{
+            flex-basis: 100%;
+        }
+   }
+
+</style>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            
+        <a href="#" class="navbar-logo">Practise</a>
+        <button class="navbar-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button> 
+        <ul class="navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+       
+    </div>
+    </nav>
+    <header>
+        <h1>Create A Grid With CSS Flexbox Practise</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="column"> <img src="ChatGPT Image Jun 7, 2025, 02_01_40 PM.png" width="100px" alt=""><h3>This Is Grid CSS Flexbox</h3>
+            <p>Yhis is My first Flexbox test</p></div>
+            <div class="column"> <img src="ChatGPT Image Jun 7, 2025, 02_01_40 PM.png" width="100px" alt=""><h3>This Is Grid CSS Flexbox</h3>
+            <p>Yhis is My first Flexbox test</p></div>
+            <div class="column"> <img src="ChatGPT Image Jun 7, 2025, 02_01_40 PM.png" width="100px" alt=""><h3>This Is Grid CSS Flexbox</h3>
+            <p>Yhis is My first Flexbox test</p></div>
+        </div>
+        <div class="row">
+            <div class="column"></div>
+            <div class="column"></div>
+    </div>
+
+     <div class="row">
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+    </div>
+  
+    
+</body>
+<script src="script.js"></script>
+</html>
